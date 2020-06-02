@@ -25,7 +25,7 @@ public class DubboConsumerApp {
 
     @Slf4j
     @Component
-    public class UserRpcServiceTest implements CommandLineRunner {
+    public static class UserRpcServiceTest implements CommandLineRunner {
 
         @Resource
         private UserRpcService userRpcService;

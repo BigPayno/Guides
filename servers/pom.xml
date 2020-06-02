@@ -12,6 +12,7 @@
     <groupId>com.payno.guides</groupId>
     <artifactId>servers</artifactId>
     <version>1.0</version>
+    <packaging>pom</packaging>
 
     <modules>
         <module>dbs</module>

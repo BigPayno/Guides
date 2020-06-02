@@ -1,12 +1,12 @@
 package jdkguide.io;
 
 import com.google.common.io.CountingInputStream;
-import com.sun.deploy.util.SyncFileAccess;
 import jdkguide.thread.Threads;
 import org.junit.Test;
-import org.springframework.data.domain.PageRequest;
 
-import java.io.*;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.PushbackInputStream;
 
 /**
  * @author payno

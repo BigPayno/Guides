@@ -2,7 +2,6 @@ package jdkguide.thread.juc.cas;
 
 import com.sun.istack.internal.NotNull;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 
 /**

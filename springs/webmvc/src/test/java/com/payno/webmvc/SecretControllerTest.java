@@ -3,6 +3,7 @@ package com.payno.webmvc;
 import com.google.common.base.CharMatcher;
 import com.google.common.base.Strings;
 import com.google.common.io.ByteStreams;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,7 @@ import java.io.IOException;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = WebmvcApplication.class)
 @AutoConfigureMockMvc
+@Ignore
 public class SecretControllerTest {
     @Autowired
     MockMvc mockMvc;

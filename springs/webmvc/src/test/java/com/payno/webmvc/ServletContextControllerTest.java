@@ -2,6 +2,7 @@ package com.payno.webmvc;
 
 import com.payno.webmvc.controller.ServletContextController;
 import com.payno.webmvc.service.ServletContextService;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ import org.springframework.test.web.servlet.MockMvc;
  */
 @RunWith(SpringRunner.class)
 @WebMvcTest(ServletContextController.class)
+@Ignore
 public class ServletContextControllerTest {
     @Autowired
     MockMvc mockMvc;

@@ -2,6 +2,7 @@ package com.payno.webmvc;
 
 import com.payno.webmvc.web.dto.User;
 import com.payno.webmvc.web.dto.Valid;
+import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import javax.annotation.Resource;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = WebmvcApplication.class)
+@Ignore
 class WebmvcApplicationTests {
 
     @Autowired

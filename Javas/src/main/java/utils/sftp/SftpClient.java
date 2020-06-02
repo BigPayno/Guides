@@ -2,7 +2,6 @@ package utils.sftp;
 
 import com.google.common.base.Splitter;
 import com.jcraft.jsch.*;
-import com.sun.deploy.net.JARSigningException;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 

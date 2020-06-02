@@ -1,16 +1,12 @@
 package jdkguide.stream;
 
 import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 import guava.time.StopWatchRunnable;
-import jdk.management.resource.internal.inst.InitInstrumentation;
 import org.junit.Test;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
-import java.util.function.IntUnaryOperator;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 

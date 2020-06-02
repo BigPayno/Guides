@@ -39,7 +39,7 @@
                                     <directory>src/main/resources</directory>
                                     <includes>
                                         <include>*.sh</include>
-                                        <include>api.config/**</include>
+                                        <include>api/**</include>
                                     </includes>
                                 </resource>
                             </resources>
@@ -50,7 +50,7 @@
             </plugin>
 
             <!--build文件生成配置,制作项目分发包-->
-            <plugin>
+           <!-- <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
@@ -67,7 +67,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
 
             <!--Jpa Q类生成配置-->
             <plugin>

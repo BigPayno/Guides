@@ -12,6 +12,7 @@
     <groupId>com.payno.guides</groupId>
     <artifactId>utils</artifactId>
     <version>1.0</version>
+    <packaging>pom</packaging>
     <name>utils</name>
 
     <modules>

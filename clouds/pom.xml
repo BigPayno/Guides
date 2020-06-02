@@ -15,6 +15,7 @@
 
     <groupId>com.payno.guides</groupId>
     <artifactId>clouds</artifactId>
+    <packaging>pom</packaging>
 
     <modules>
         <module>feign</module>

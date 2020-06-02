@@ -7,7 +7,7 @@
     <groupId>com.payno.guides.clouds</groupId>
     <artifactId>dubbo.api</artifactId>
     <version>1.0</version>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>

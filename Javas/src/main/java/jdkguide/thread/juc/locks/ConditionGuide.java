@@ -1,9 +1,8 @@
 package jdkguide.thread.juc.locks;
 
-import com.sun.istack.internal.NotNull;
-import lombok.RequiredArgsConstructor;
-
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
