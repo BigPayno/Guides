@@ -1,4 +1,4 @@
-package com.payno.transaction.Test;
+package com.payno.transaction.deprecated.Test;
 
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;

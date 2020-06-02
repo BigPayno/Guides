@@ -1,8 +1,9 @@
-package com.payno.transaction;
+package com.payno.transaction.deprecated;
 
-import com.payno.transaction.Test.Bean;
-import com.payno.transaction.Test.Config;
-import com.payno.transaction.Test.ContextHolder;
+import com.payno.transaction.TransactionApplication;
+import com.payno.transaction.deprecated.Test.Bean;
+import com.payno.transaction.deprecated.Test.Config;
+import com.payno.transaction.deprecated.Test.ContextHolder;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

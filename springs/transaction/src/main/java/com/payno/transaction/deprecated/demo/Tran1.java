@@ -1,4 +1,4 @@
-package com.payno.transaction.demo;
+package com.payno.transaction.deprecated.demo;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;

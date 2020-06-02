@@ -1,4 +1,4 @@
-package com.payno.transaction.Test;
+package com.payno.transaction.deprecated.Test;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

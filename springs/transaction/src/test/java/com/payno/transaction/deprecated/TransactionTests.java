@@ -1,8 +1,9 @@
-package com.payno.transaction;
+package com.payno.transaction.deprecated;
 
-import com.payno.transaction.demo.ITran;
-import com.payno.transaction.demo.Obj;
-import com.payno.transaction.demo.Tran5;
+import com.payno.transaction.TransactionApplication;
+import com.payno.transaction.deprecated.demo.ITran;
+import com.payno.transaction.deprecated.demo.Obj;
+import com.payno.transaction.deprecated.demo.Tran5;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

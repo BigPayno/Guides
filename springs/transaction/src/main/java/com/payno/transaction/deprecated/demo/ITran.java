@@ -1,6 +1,4 @@
-package com.payno.transaction.demo;
-
-import org.springframework.transaction.annotation.Transactional;
+package com.payno.transaction.deprecated.demo;
 
 /**
  * @author payno

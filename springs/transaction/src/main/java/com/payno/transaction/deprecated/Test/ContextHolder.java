@@ -1,4 +1,4 @@
-package com.payno.transaction.Test;
+package com.payno.transaction.deprecated.Test;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
