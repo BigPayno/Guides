@@ -6,6 +6,7 @@
     <modules>
         <module>advisor</module>
         <module>converter</module>
+        <module>base</module>
     </modules>
 
     <parent>
