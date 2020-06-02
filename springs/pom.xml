@@ -23,5 +23,6 @@
         <module>task</module>
         <module>transaction</module>
         <module>webmvc</module>
+        <module>cache</module>
     </modules>
 </project>
