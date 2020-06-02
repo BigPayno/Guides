@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active: base
+logging:
+  level:
+    org.springframework.data: debug

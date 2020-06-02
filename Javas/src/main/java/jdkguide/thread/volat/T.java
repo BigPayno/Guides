@@ -1,0 +1,41 @@
+package jdkguide.thread.volat;
+
+import org.junit.Test;
+
+/**
+ * @author payno
+ * @date 2019/12/7 15:08
+ * @description
+ */
+public class T {
+    boolean running = true;
+    public static void main(String[] args) throws Exception{
+        T t=new T();
+        Object sync=new Object();
+        new Thread(()->{
+            System.out.println("r1 run!");
+            while(t.running){}
+            System.out.println("r1 stop!");
+        }).start();
+        new Thread(()->{
+            System.out.println("r2 run!");
+            while(t.running){
+                synchronized (sync){}
+            }
+            System.out.println("r2 stop!");
+        }).start();
+        Thread.sleep(1000);
+        t.running=false;
+    }
+
+    public void change(boolean a){
+        a=false;
+    }
+
+    @Test
+    public void test(){
+        boolean a=true;
+        change(a);
+        System.out.println(a);
+    }
+}

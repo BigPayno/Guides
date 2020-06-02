@@ -1,0 +1,12 @@
+server:
+  port: 8081
+
+logging:
+  level:
+    org:
+      springframework:
+        security: debug
+spring:
+  security:
+    oauth2:
+      a
