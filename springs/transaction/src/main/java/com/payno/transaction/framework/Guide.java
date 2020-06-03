@@ -1,7 +1,9 @@
 package com.payno.transaction.framework;
 
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.TransactionManager;
+
 import javax.transaction.Transaction;
-import javax.transaction.TransactionManager;
 
 /**
  * @author payno
@@ -10,6 +12,6 @@ import javax.transaction.TransactionManager;
  */
 public class Guide {
     public static void main(String[] args) {
-
+        TransactionManager transactionManager = new DataSourceTransactionManager();
     }
 }

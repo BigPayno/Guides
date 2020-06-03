@@ -14,7 +14,7 @@ public class AopInterfacesGuide {
      *   2).  如果bean实现了Advice接口，不能创建通知的代理对象。
      *
      *   3).  如果bean实现了AopInfrastructureBean接口，实现了该接口的类是Spring's AOP系统类，不能被代理。
-     *
+     *          =>@Role(BeanDefinition.ROLE_INFRASTRUCTURE)
      *   4).  如果当前bean是切面bean，不能创建切面bean的代理对象。
      *
      *   5).  如果当前bean的RootBeanDefinition成员变量synthetic为true，不能创建合成bean的代理对象。
