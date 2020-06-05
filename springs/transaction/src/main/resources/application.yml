@@ -8,7 +8,7 @@ spring:
     database-platform: org.hibernate.dialect.Oracle10gDialect
     show-sql: true
     properties:
-      #ÅúÁ¿¸üĞÂÓë²åÈë
+      #æ‰¹é‡æ›´æ–°ä¸æ’å…¥
       jdbc:
         batch_size: 25
         order_inserts: true
