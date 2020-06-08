@@ -17,8 +17,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = TransactionApplication.class)
 public class BaseTransactionTest {
-    @Autowired
-    TransactionsTest test;
+    @Autowired TransactionPropagationTest propagationTest;
+    @Autowired TransactionsTest test;
     @Autowired ModelRepo repo;
 
     @Before
@@ -46,5 +46,10 @@ public class BaseTransactionTest {
     public void synchronization(){
         test.saveWithSynchronization(Model.builder().cusName("synchronization").build());
         test.saveWithSynchronizationButRollback(Model.builder().cusName("synchronizationButRollback").build());
+    }
+
+    @Test
+    public void propagationTest(){
+        propagationTest.test(Model.builder().cusName("payno").build());
     }
 }
