@@ -2,7 +2,6 @@ package com.payno.transaction.error.error1;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionSynchronizationAdapter;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
@@ -16,8 +15,6 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
 public class ErrorTest {
 
     @Autowired ApplyRepo repo;
-
-    @Autowired PlatformTransactionManager manager;
 
     @Transactional(rollbackFor = RuntimeException.class)
     public void test(){

@@ -23,7 +23,7 @@ public class TransactionApplication implements ApplicationRunner, ApplicationCon
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        System.err.println(context.getBean(TransactionManager.class).getClass());
+        context.getBeansOfType(TransactionManager.class).keySet().forEach(System.err::println);
     }
 
     @Override
