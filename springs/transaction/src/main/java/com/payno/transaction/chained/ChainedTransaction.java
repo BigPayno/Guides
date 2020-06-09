@@ -4,11 +4,14 @@ import com.payno.transaction.transactions.Model;
 import com.payno.transaction.transactions.ModelRepo;
 import com.payno.transaction.transactions.TransactionPropagationTest;
 import org.redisson.api.RSet;
+import org.redisson.api.RTransaction;
 import org.redisson.api.RedissonClient;
 import org.redisson.api.TransactionOptions;
+import org.redisson.spring.transaction.RedissonTransactionHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.TransactionSynchronizationManager;
 
 /**
  * @author payno
@@ -28,19 +31,34 @@ public class ChainedTransaction {
     ModelRepo repo;
 
     /**
-     *  最终jpa回滚，redisson没有回滚
+     *  最终jpa未回滚，redisson没有提交
      */
-    @Transactional(value = "transactionManager",rollbackFor = RuntimeException.class)
     public void test(){
-        RSet<String> set=redissonClient.createTransaction(TransactionOptions.defaults()).getSet("tran-test");
+        RTransaction transaction = redissonClient.createTransaction(TransactionOptions.defaults());
+        RSet<String> set=transaction.getSet("tran-test");
         set.add("rollbackRedis");
         repo.save(Model.builder().cusName("rollback").build());
         throw new RuntimeException();
     }
 
-    @Transactional(value = "redssionTransactionManager",rollbackFor = RuntimeException.class)
+    /**
+     *  最终jpa提交，redisson提交
+     */
+    @Transactional(rollbackFor = RuntimeException.class)
     public void test2(){
-        RSet<String> set=redissonClient.getSet("tran-test");
+        RedissonTransactionHolder holder=(RedissonTransactionHolder)TransactionSynchronizationManager.getResource(redissonClient);
+        RSet<String> set=holder.getTransaction().getSet("tran-test");
+        set.add("rollbackRedis");
+        repo.save(Model.builder().cusName("rollback").build());
+    }
+
+    /**
+     * jpa、redisson未提交
+     */
+    @Transactional(rollbackFor = RuntimeException.class)
+    public void test3(){
+        RedissonTransactionHolder holder=(RedissonTransactionHolder)TransactionSynchronizationManager.getResource(redissonClient);
+        RSet<String> set=holder.getTransaction().getSet("tran-test");
         set.add("rollbackRedis");
         repo.save(Model.builder().cusName("rollback").build());
         throw new RuntimeException();

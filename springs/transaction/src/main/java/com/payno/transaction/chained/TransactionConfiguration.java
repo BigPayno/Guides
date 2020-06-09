@@ -18,6 +18,9 @@ import javax.annotation.Resource;
  * @author payno
  * @date 2020/6/8 16:53
  * @description
+ *      EnableTransactionManagement
+ *      ->TransactionManagementConfigurationSelector
+ *      ->TransactionManagementConfigurer 事务的提供者
  */
 @Profile("redis")
 @Configuration
@@ -39,9 +42,13 @@ public class TransactionConfiguration implements TransactionManagementConfigurer
     @Primary
     public TransactionManager annotationDrivenTransactionManager() {
         ChainedTransactionManager chainedTransactionManager=new ChainedTransactionManager(
-                new RedissonTransactionManager(redissonClient),
+               redissonTransactionManager(),
                 transactionManager
         );
         return chainedTransactionManager;
+    }
+
+    public RedissonTransactionManager redissonTransactionManager(){
+        return new RedissonTransactionManager(redissonClient);
     }
 }

@@ -44,7 +44,7 @@ public class RedisTransactionTest {
         try{
             chainedTransaction.test();
         }catch (Exception e){
-            // jpa rollback
+            // jpa rollback,redisson not commit
         }
     }
 
@@ -53,7 +53,16 @@ public class RedisTransactionTest {
         try{
             chainedTransaction.test2();
         }catch (Exception e){
-            // jpa and redisson rollback
+            // jpa and redisson commit
+        }
+    }
+
+    @Test
+    public void test3(){
+        try{
+            chainedTransaction.test3();
+        }catch (Exception e){
+            // jpa and redisson not commit
         }
     }
 }
