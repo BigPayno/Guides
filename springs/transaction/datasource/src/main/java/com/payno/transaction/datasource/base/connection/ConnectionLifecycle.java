@@ -35,11 +35,13 @@ public class ConnectionLifecycle {
                 new int[]{Types.NUMERIC,Types.VARCHAR});
         ConnectionHolder connection = (ConnectionHolder) TransactionSynchronizationManager.getResource(dataSource);
         System.out.println(connection);
+        System.err.println("Transaction-beforeCommit:"+TransactionSynchronizationManager.getCurrentTransactionName());
         TransactionSynchronizationManager.registerSynchronization(new TransactionSynchronizationAdapter() {
             @Override
             public void afterCommit() {
                 ConnectionHolder connection = (ConnectionHolder) TransactionSynchronizationManager.getResource(dataSource);
                 System.out.println(connection);
+                System.err.println("Transaction-afterCommit:"+TransactionSynchronizationManager.getCurrentTransactionName());
                 template.update(
                         "insert into apply(apply_id,cus_name) values(?,?)",
                         new Object[]{apply2.getApplyId(),apply2.getCusName()},
