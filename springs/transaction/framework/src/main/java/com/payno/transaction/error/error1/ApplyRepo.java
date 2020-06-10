@@ -10,9 +10,16 @@ import org.springframework.transaction.annotation.Transactional;
  * @description
  */
 public interface ApplyRepo extends CrudRepository<Apply, Integer> {
-    @Override
-    @Transactional(propagation = Propagation.REQUIRES_NEW)
-    <S extends Apply> S save(S s);
+
+    @Transactional(rollbackFor = RuntimeException.class,propagation = Propagation.REQUIRED)
+    default <S extends Apply> S saveOnRequired(S s){
+        return save(s);
+    }
+
+    @Transactional(rollbackFor = RuntimeException.class,propagation = Propagation.REQUIRES_NEW)
+    default <S extends Apply> S saveOnRequiredNew(S s){
+        return save(s);
+    }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
