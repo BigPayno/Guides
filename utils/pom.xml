@@ -19,5 +19,6 @@
         <module>mapstruct</module>
         <module>rxJava</module>
         <module>swagger</module>
+        <module>netty</module>
     </modules>
 </project>

@@ -1,4 +1,4 @@
-package netty.bytebuf;
+package com.payno.guides.utils.netty.base.bytebuf;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.CompositeByteBuf;
