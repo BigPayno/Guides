@@ -1,6 +1,5 @@
-package jdkguide.reflect;
+package com.payno.guides.utils.netty.base;
 
-import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
 
 import java.util.List;
@@ -10,7 +9,7 @@ import java.util.List;
  * @date 2019/12/6 15:27
  * @description
  */
-public final class Objs {
+public final class ObjectU {
     private static final Splitter INNER_CLASS_SPLITTER=Splitter.on('$');
     private static final Splitter CLASS_NAME_SPLITTER=Splitter.on('.');
     public static void printC(Object object){

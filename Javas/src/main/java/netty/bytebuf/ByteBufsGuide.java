@@ -4,7 +4,7 @@ import io.netty.buffer.ByteBuf;
 import io.netty.buffer.CompositeByteBuf;
 import io.netty.buffer.PooledByteBufAllocator;
 import io.netty.buffer.Unpooled;
-import jdkguide.reflect.Objs;
+import jdkguide.reflect.ObjectU;
 import org.junit.Test;
 
 import java.nio.ByteBuffer;
@@ -38,8 +38,8 @@ public class ByteBufsGuide {
          * (riIx:0,widIx:0,cap:256)
          */
         ByteBuf byteBuf1=Unpooled.directBuffer();
-        Objs.printC(byteBuf);
-        Objs.printC(byteBuf1);
+        ObjectU.printC(byteBuf);
+        ObjectU.printC(byteBuf1);
     }
 
     /**
@@ -67,9 +67,9 @@ public class ByteBufsGuide {
          * toString [UnpooledHeapByteBuf(ridx: 0, widx: 2, cap: 2/2)]
          */
         ByteBuf copyFromByteBuffer=Unpooled.copiedBuffer(ByteBuffer.wrap(new byte[2]));
-        Objs.printC(copyFromByteArray);
-        Objs.printC(copyFromByteBuf);
-        Objs.printC(copyFromByteBuffer);
+        ObjectU.printC(copyFromByteArray);
+        ObjectU.printC(copyFromByteBuf);
+        ObjectU.printC(copyFromByteBuffer);
 
         /**
          * 是深拷贝？
@@ -95,7 +95,7 @@ public class ByteBufsGuide {
          */
         CompositeByteBuf compositeByteBuf=Unpooled.compositeBuffer(2);
         compositeByteBuf.addComponents(Unpooled.EMPTY_BUFFER);
-        Objs.printC(compositeByteBuf);
+        ObjectU.printC(compositeByteBuf);
     }
 
     @Test
@@ -107,7 +107,7 @@ public class ByteBufsGuide {
         byte[] bytes="hello".getBytes();
         byte[] bytes2=new byte[5];
         ByteBuf byteBuf=Unpooled.wrappedBuffer(bytes);
-        Objs.printC(byteBuf);
+        ObjectU.printC(byteBuf);
         /**
          * 包装后的Buf将byteBuf的内容写入bytes2
          * 读取后，Buf变成不可读不可写的
@@ -137,8 +137,8 @@ public class ByteBufsGuide {
          * 不可释放，用于包装池化buffer，使之不会被释放调
          */
         ByteBuf byteBuf2=Unpooled.unreleasableBuffer(Unpooled.EMPTY_BUFFER);
-        Objs.printC(byteBuf1);
-        Objs.printC(byteBuf2);
+        ObjectU.printC(byteBuf1);
+        ObjectU.printC(byteBuf2);
     }
 
     /**

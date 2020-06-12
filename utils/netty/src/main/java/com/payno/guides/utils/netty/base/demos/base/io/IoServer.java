@@ -14,6 +14,7 @@ public class IoServer {
     public static void main(String[] args) throws Exception{
         ServerSocket serverSocket=new ServerSocket(8000);
         new Thread(()->{
+            System.out.println("server start!");
             while(true){
                 try{
                     Socket socket=serverSocket.accept();
