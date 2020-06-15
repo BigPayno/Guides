@@ -1,4 +1,4 @@
-package jdkguide.reflect.proxy.jdk;
+package jdkguide.reflect.proxy.jdk.faststart;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -28,6 +28,7 @@ public class InvocationHandler<T> implements java.lang.reflect.InvocationHandler
     }
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        System.out.println(proxy.getClass());
         return method.invoke(target,args);
     }
 

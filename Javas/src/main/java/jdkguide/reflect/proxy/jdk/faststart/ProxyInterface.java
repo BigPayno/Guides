@@ -1,4 +1,4 @@
-package jdkguide.reflect.proxy.jdk;
+package jdkguide.reflect.proxy.jdk.faststart;
 
 /**
  * @author payno

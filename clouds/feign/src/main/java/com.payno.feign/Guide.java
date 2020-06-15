@@ -14,6 +14,6 @@ public class Guide {
      *      3.契约(contracts)
      *      4.自动编解码(encoder,decoder) -> RestTemplate HttpMessageConverter
      *      5.指标(metrics)
-     *      6.extras(hystrix,log...)
+     *      6.extras(feign,log...)
      */
 }
