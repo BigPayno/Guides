@@ -1,0 +1,4 @@
+spring:
+  rabbitmq:
+    host: 112.124.200.92
+    port: 9876

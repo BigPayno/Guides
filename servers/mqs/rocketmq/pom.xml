@@ -10,10 +10,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.payno.guides</groupId>
-    <artifactId>mqs.rocketmq</artifactId>
+    <groupId>com.payno.guides.servers.mqs</groupId>
+    <artifactId>rocketmq</artifactId>
     <version>1.0</version>
-    <name>mqs.rocketmq</name>
+    <name>rocketmq</name>
     <packaging>jar</packaging>
     <description>Mq</description>
 
