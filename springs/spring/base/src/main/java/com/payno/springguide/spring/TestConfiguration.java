@@ -29,7 +29,6 @@ public class TestConfiguration implements ApplicationContextAware {
 
     @Component
     public static class Service{
-
     }
 
     @Bean

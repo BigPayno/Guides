@@ -1,5 +1,5 @@
 spring:
   rabbitmq:
     host: 112.124.200.92
-    # 9872 是rabbit暴露的http端口
-    port: 9872
+    # 9876 是rabbit暴露的http端口,吐了，没注意一个是rocketMq，一个是rabbitMq
+    port: 9876

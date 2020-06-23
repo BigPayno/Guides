@@ -12,5 +12,6 @@
     <modules>
         <module>rocketmq</module>
         <module>amqp</module>
+        <module>jms</module>
     </modules>
 </project>
