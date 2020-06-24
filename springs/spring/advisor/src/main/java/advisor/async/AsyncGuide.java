@@ -9,4 +9,6 @@ public class AsyncGuide {
     /**
      *  valid  async 都是基于该方式实现代理的
      */
+    public static void main(String[] args) {
+    }
 }
