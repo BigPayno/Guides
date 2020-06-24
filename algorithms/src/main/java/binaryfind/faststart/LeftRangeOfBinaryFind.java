@@ -1,4 +1,4 @@
-package binaryfind;
+package binaryfind.faststart;
 
 /**
  * @author payno
