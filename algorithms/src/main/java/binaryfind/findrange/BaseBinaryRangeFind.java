@@ -29,8 +29,4 @@ public class BaseBinaryRangeFind extends AbstractBinaryRangeFind{
         return context.mid;
     }
 
-    @Override
-    void printFindRange(FindContext context) {
-        System.out.println("当前搜索范围["+context.low+","+context.high+"]");
-    }
 }

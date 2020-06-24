@@ -6,5 +6,5 @@ package binaryfind.findrange;
  * @description
  */
 public interface BinaryFind {
-    int binaryFind(int[] nums, int target);
+    int binaryFind(FindContext context);
 }

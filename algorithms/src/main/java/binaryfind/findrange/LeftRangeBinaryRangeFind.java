@@ -43,8 +43,4 @@ public class LeftRangeBinaryRangeFind extends AbstractBinaryRangeFind{
         return -1;
     }
 
-    @Override
-    void printFindRange(FindContext context) {
-        System.out.println("当前搜索范围["+context.low+","+context.high+"]");
-    }
 }

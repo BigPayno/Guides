@@ -8,8 +8,7 @@ package binaryfind.findrange;
 public abstract class AbstractBinaryRangeFind implements BinaryFind{
 
     @Override
-    public int binaryFind(int[] nums, int target) {
-        FindContext context = FindContext.of(nums,target,0,nums.length-1);
+    public int binaryFind(FindContext context) {
         while (context.low<=context.high){
             printFindRange(context);
             context.mid = (context.high+context.low)>>>1;
@@ -25,5 +24,7 @@ public abstract class AbstractBinaryRangeFind implements BinaryFind{
     abstract boolean tryLowContract(FindContext context);
     abstract boolean tryHighContract(FindContext context);
     abstract int getResult(FindContext context);
-    abstract void printFindRange(FindContext context);
+    private void printFindRange(FindContext context){
+        System.out.println("当前搜索范围["+context.low+","+context.high+"]");
+    }
 }

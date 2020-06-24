@@ -6,23 +6,23 @@ package binaryfind.findrange;
  * @description
  */
 public class MainTest {
+
+    private static void test(BinaryFind find,FindContext context){
+        System.out.println(find.binaryFind(context));
+    }
+
     public static void main(String[] args) {
         BinaryFind leftRangeFind = new LeftRangeBinaryRangeFind();
-        System.out.println(leftRangeFind.binaryFind(new int[]{1},1));
-        System.out.println(leftRangeFind.binaryFind(new int[]{1},0));
-        System.out.println(leftRangeFind.binaryFind(new int[]{1,2,3,3,4,5,7,7,7,10},7));
-        System.out.println(leftRangeFind.binaryFind(new int[]{1,2,3,3,4,5,7,7,7,10},1));
-        System.out.println(leftRangeFind.binaryFind(new int[]{1,2,3,3,4,5,7,7,7,10},10));
-        System.out.println(leftRangeFind.binaryFind(new int[]{1,2,3,3,4,5,7,7,7,10},11));
-        System.out.println(leftRangeFind.binaryFind(new int[]{1,2,3,3,4,5,7,7,7,10},0));
-        System.err.println();
-        BinaryFind baseRangeFind = new BaseBinaryRangeFind();
-        System.out.println(baseRangeFind.binaryFind(new int[]{1},1));
-        System.out.println(baseRangeFind.binaryFind(new int[]{1},0));
-        System.out.println(baseRangeFind.binaryFind(new int[]{1,2,3,4,5,7,10},7));
-        System.out.println(baseRangeFind.binaryFind(new int[]{1,2,3,4,5,7,10},1));
-        System.out.println(baseRangeFind.binaryFind(new int[]{1,2,3,4,5,7,10},10));
-        System.out.println(baseRangeFind.binaryFind(new int[]{1,2,3,4,5,7,10},11));
-        System.out.println(baseRangeFind.binaryFind(new int[]{1,2,3,4,5,7,10},0));
+        BinaryFind rightRangeFind = new RightRangeBinaryRangeFind();
+        test(leftRangeFind,FindContext.of(new int[]{1},1,0,1));
+        test(leftRangeFind,FindContext.of(new int[]{1},0,0,1));
+        int [] nums = new int[]{0,1,2,3,4,4,4,5,5,6};
+        int low = leftRangeFind.binaryFind(FindContext.of(nums,5,0,nums.length-1));
+        if(low==-1){
+            System.out.println("[-1,-1]");
+        }else{
+            int high = rightRangeFind.binaryFind(FindContext.of(nums,5,low,nums.length-1));
+            System.out.println("["+low+","+high+"]");
+        }
     }
 }
