@@ -1,4 +1,4 @@
-package advisor.imports;
+package advisor.imports.importselector;
 
 import org.springframework.context.annotation.AdviceMode;
 import org.springframework.context.annotation.AdviceModeImportSelector;
@@ -14,6 +14,6 @@ public class ActiveModeSelector extends AdviceModeImportSelector<EnableImport> {
         /**
          *  注入String的类
          */
-        return new String[]{"advisor.imports.ImportAwareRunner"};
+        return new String[]{"advisor.imports.importselector.ImportAwareRunner"};
     }
 }

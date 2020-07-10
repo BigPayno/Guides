@@ -1,4 +1,4 @@
-package advisor.imports;
+package advisor.imports.importselector;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;

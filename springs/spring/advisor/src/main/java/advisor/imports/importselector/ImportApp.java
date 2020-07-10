@@ -1,6 +1,5 @@
-package advisor.imports;
+package advisor.imports.importselector;
 
-import org.springframework.aop.framework.ProxyConfig;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;

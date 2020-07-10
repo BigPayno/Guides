@@ -1,4 +1,4 @@
-package advisor.imports;
+package advisor.imports.importselector;
 
 import org.springframework.context.annotation.AdviceMode;
 import org.springframework.context.annotation.Import;
