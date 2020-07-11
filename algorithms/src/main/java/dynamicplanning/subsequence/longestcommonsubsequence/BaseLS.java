@@ -19,6 +19,7 @@ public class BaseLS implements LongestCommonSubsequence {
     }
 
     @Override
+
     public int[][] of(String str1, String str2) {
         int base = str1.length()+str2.length();
         int[][] dp = new int[str1.length()+1][str2.length()+1];
