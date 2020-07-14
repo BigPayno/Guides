@@ -1,8 +1,11 @@
 package com.payno.guides.servers.mqs.amqp;
 
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
+import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.rabbit.transaction.RabbitTransactionManager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
 
@@ -12,9 +15,14 @@ import org.springframework.transaction.PlatformTransactionManager;
  * @description
  */
 @Configuration
-public class AmqpConfiguration {
-    @Autowired
-    public PlatformTransactionManager rabbitTM(ConnectionFactory connectionFactory){
+public class AmqpConfiguration{
+    @Bean
+    public PlatformTransactionManager rabbitTM(@Autowired ConnectionFactory connectionFactory){
         return new RabbitTransactionManager(connectionFactory);
+    }
+
+    @Bean
+    public RabbitAdmin rabbitAdmin(@Autowired ConnectionFactory connectionFactory){
+        return new RabbitAdmin(connectionFactory);
     }
 }

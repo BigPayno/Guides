@@ -1,5 +1,6 @@
 package com.payno.guides.servers.mqs.amqp;
 
+import org.springframework.amqp.rabbit.transaction.RabbitTransactionManager;
 import org.springframework.stereotype.Service;
 
 /**
@@ -9,4 +10,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class AmqpTransactionGuide {
+    public static void main(String[] args) {
+        System.err.println(RabbitTransactionManager.class);
+    }
 }

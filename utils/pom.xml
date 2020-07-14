@@ -20,5 +20,7 @@
         <module>rxJava</module>
         <module>swagger</module>
         <module>netty</module>
+        <module>joor</module>
+        <module>mockito</module>
     </modules>
 </project>

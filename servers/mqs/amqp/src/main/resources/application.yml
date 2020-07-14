@@ -1,5 +1,6 @@
 spring:
   rabbitmq:
-    host: 112.124.200.92
-    # 9876 是rabbit暴露的http端口,吐了，没注意一个是rocketMq，一个是rabbitMq
-    port: 9876
+    addresses: mq-1.rabbitmq.idc.cedu.cn:5672,mq-2.rabbitmq.idc.cedu.cn:5672,mq-3.rabbitmq.idc.cedu.cn:5672
+    virtual-host: socialiosvc
+    username: socialiosvc
+    password: socialiosvc
