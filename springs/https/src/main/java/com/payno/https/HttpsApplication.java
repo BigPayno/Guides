@@ -15,4 +15,10 @@ public class HttpsApplication {
     public void test(){
         System.out.println("hello,https");
     }
+
+    @GetMapping("/payno")
+    public String test2(){
+        System.out.println("payno");
+        return "hello,https";
+    }
 }

@@ -24,5 +24,6 @@
         <module>transaction</module>
         <module>webmvc</module>
         <module>cache</module>
+        <module>retry</module>
     </modules>
 </project>
