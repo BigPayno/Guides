@@ -12,6 +12,12 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class ForkjoinBug {
+
+    /*
+    *       是JPA默认事务级别搭配事务原子管理器才会出bug!!!!!
+    *
+    * */
+
     public static void main(String[] args) {
         int i=1000;
         while(i>0){

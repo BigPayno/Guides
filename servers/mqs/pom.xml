@@ -13,5 +13,6 @@
         <module>rocketmq</module>
         <module>amqp</module>
         <module>jms</module>
+        <module>kafka</module>
     </modules>
 </project>
