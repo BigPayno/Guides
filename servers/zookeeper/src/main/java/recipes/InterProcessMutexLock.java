@@ -23,9 +23,10 @@ public class InterProcessMutexLock {
     public void lock(){
         InterProcessMutex mutex=new InterProcessMutex(Curators.client(),"/lock/update");
         Runnable update=()->{
+            boolean holdLock = false;
             try{
                 System.out.println(Thread.currentThread().getName()+" try to acquire lock!");
-                boolean holdLock=mutex.acquire(10, TimeUnit.SECONDS);
+                holdLock=mutex.acquire(10, TimeUnit.SECONDS);
                 if(holdLock){
                     System.out.println(Thread.currentThread().getName()+" hold lock!");
                     Threads.sleep(8000);
@@ -36,8 +37,12 @@ public class InterProcessMutexLock {
                 e.printStackTrace();
             }finally {
                 try{
-                    mutex.release();
-                    System.out.println(Thread.currentThread().getName()+" release lock!");
+                    if(holdLock){
+                        mutex.release();
+                        System.out.println(Thread.currentThread().getName()+" release lock!");
+                    }else{
+                        System.out.println(Thread.currentThread().getName()+" not acquire lock!");
+                    }
                 }catch (Exception e){
                     e.printStackTrace();
                 }
