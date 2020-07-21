@@ -21,5 +21,6 @@
         <module>servers</module>
         <module>javas</module>
         <module>algorithms</module>
+        <module>springs/spring4</module>
     </modules>
 </project>

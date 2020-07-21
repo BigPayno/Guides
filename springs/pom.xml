@@ -26,5 +26,6 @@
         <module>cache</module>
         <module>retry</module>
         <module>base</module>
+        <module>spring-version</module>
     </modules>
 </project>

@@ -1,8 +1,11 @@
 package com.payno.feign;
 
 import com.google.common.base.Charsets;
-import com.google.common.io.ByteSource;
 import com.google.common.io.ByteStreams;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +24,7 @@ import java.io.IOException;
  */
 @SpringBootApplication
 @RestController
-public class App {
+public class App implements ApplicationRunner {
     public static void main(String[] args) {
         SpringApplication.run(App.class, args);
     }
@@ -51,5 +54,16 @@ public class App {
     @PostMapping("/error2")
     public void test5() throws Exception{
         throw new IOException();
+    }
+
+    @Autowired
+    AutowireCapableBeanFactory beanFactory;
+
+    @Override
+    public void run(ApplicationArguments args) throws Exception {
+        AutowireTest test = new AutowireTest();
+        beanFactory.autowireBean(test);
+        beanFactory.initializeBean(test,"beanName");
+        test.test();
     }
 }
