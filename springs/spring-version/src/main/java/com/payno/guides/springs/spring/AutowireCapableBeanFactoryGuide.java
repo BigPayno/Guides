@@ -54,9 +54,7 @@ public class AutowireCapableBeanFactoryGuide {
         beanFactory.registerSingleton("payno",test);
         System.out.println(beanFactory.getBean(Payno.class));
         Context context = new Context();
-        System.out.println(context);
         beanFactory.autowireBean(context);
-        System.out.println(beanFactory.getBean(Context.class));
         System.out.println(context);
     }
 }
