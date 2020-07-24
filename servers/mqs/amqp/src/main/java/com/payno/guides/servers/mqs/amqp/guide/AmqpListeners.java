@@ -1,12 +1,16 @@
 package com.payno.guides.servers.mqs.amqp.guide;
 
 import com.google.common.util.concurrent.MoreExecutors;
+import com.rabbitmq.client.AMQP.BasicProperties;
+import com.rabbitmq.client.ReturnListener;
 import org.junit.Test;
+import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.listener.RabbitListenerEndpointRegistry;
 import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -30,6 +34,18 @@ public class AmqpListeners extends FastStart{
         connectionFactory.addConnectionListener(connection -> {
             System.err.println(connection);
             System.err.println(connection.getDelegate());
+        });
+
+        CachingConnectionFactory cachingConnectionFactory = (CachingConnectionFactory) connectionFactory;
+        cachingConnectionFactory.addChannelListener((channel, b) -> {
+            channel.addConfirmListener(null);
+            channel.addReturnListener(new ReturnListener() {
+                @Override
+                public void handleReturn(int i, String s, String s1, String s2, BasicProperties basicProperties, byte[] bytes) throws IOException {
+
+                }
+            });
+            channel.addShutdownListener(null);
         });
 
         inspect();
