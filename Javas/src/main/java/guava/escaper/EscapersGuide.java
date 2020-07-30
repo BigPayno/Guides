@@ -2,6 +2,9 @@ package guava.escaper;
 
 import com.google.common.escape.Escaper;
 import com.google.common.net.UrlEscapers;
+import org.junit.Test;
+
+import java.net.URLDecoder;
 
 /**
  * 幸免型导
@@ -17,6 +20,29 @@ public class EscapersGuide {
         *
         * */
         Escaper fragmentEscaper = UrlEscapers.urlFragmentEscaper();
-        System.out.println(fragmentEscaper.escape("https://acacaffv#acs"));
+        System.out.println(fragmentEscaper.escape("https://acacaffv%acs"));
+    }
+
+    @Test
+    public void test1(){
+        try{
+            System.out.println(
+                URLDecoder.decode("123%.txt","UTF-8")
+            );
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void test2(){
+        try{
+            System.out.println(
+                URLDecoder.decode(
+                        UrlEscapers.urlFormParameterEscaper().escape("123%.txt"),"UTF-8")
+            );
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
