@@ -1,4 +1,4 @@
-package spring.reflect.annotation;
+package spring.reflect.annotation.faststart;
 
 import org.springframework.core.annotation.AliasFor;
 
@@ -6,7 +6,7 @@ import java.lang.annotation.*;
 
 /**
  * @author payno
- * @date 2019/12/11 11:17
+ * @date 2019/12/11 10:40
  * @description
  */
 @Target({ElementType.TYPE})
@@ -15,8 +15,8 @@ import java.lang.annotation.*;
  * 代表子类拥有父亲注解的能力
  */
 @Inherited
-@Ser
-public @interface EsbSer {
+@Com
+public @interface Ser {
     @AliasFor(value = "name",annotation = Com.class)
-    String name() default "esbSer";
+    String serName() default "ser";
 }

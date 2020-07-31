@@ -1,4 +1,4 @@
-package spring.reflect.annotation;
+package spring.reflect.annotation.faststart;
 
 import com.google.common.collect.ImmutableList;
 import org.junit.Test;
@@ -6,7 +6,6 @@ import org.springframework.core.annotation.AnnotatedElementUtils;
 import org.springframework.core.annotation.AnnotationUtils;
 
 import java.lang.annotation.Annotation;
-import java.lang.reflect.AnnotatedElement;
 
 /**
  * @author payno

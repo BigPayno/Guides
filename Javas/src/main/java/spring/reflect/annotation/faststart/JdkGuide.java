@@ -1,4 +1,4 @@
-package spring.reflect.annotation;
+package spring.reflect.annotation.faststart;
 
 import org.springframework.core.annotation.AnnotatedElementUtils;
 import org.springframework.core.annotation.AnnotationUtils;
