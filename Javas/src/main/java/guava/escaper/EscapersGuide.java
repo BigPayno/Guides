@@ -3,8 +3,10 @@ package guava.escaper;
 import com.google.common.escape.Escaper;
 import com.google.common.net.UrlEscapers;
 import org.junit.Test;
+import org.springframework.core.annotation.AnnotatedElementUtils;
 
 import java.net.URLDecoder;
+import java.net.URLEncoder;
 
 /**
  * 幸免型导
@@ -40,6 +42,19 @@ public class EscapersGuide {
             System.out.println(
                 URLDecoder.decode(
                         UrlEscapers.urlFormParameterEscaper().escape("123%.txt"),"UTF-8")
+            );
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void test3(){
+        try{
+            String txt = "123%.txt";
+            txt = URLEncoder.encode(txt,"UTF-8");
+            System.out.println(
+                URLDecoder.decode(txt,"UTF-8")
             );
         }catch (Exception e){
             e.printStackTrace();
