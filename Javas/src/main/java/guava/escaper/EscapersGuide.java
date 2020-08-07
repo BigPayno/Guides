@@ -5,6 +5,7 @@ import com.google.common.net.UrlEscapers;
 import org.junit.Test;
 import org.springframework.core.annotation.AnnotatedElementUtils;
 
+import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 
@@ -59,5 +60,13 @@ public class EscapersGuide {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void test4() throws UnsupportedEncodingException {
+        String url ="https://test-bj-1253156682.cos.ap-beijing.myqcloud.com/wechat_appendix/20200807/1596766827848987/%E5%B0%8F%E7%A8%8B%E5%BA%8F%&%E6%B5%B7%E6%8A%A5.zip";
+        System.out.println(
+                URLDecoder.decode(UrlEscapers.urlFormParameterEscaper().escape(url),"UTF-8")
+        );
     }
 }

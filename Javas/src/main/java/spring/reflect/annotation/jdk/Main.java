@@ -11,6 +11,9 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * @author zhaolei22
+ */
 public class Main {
 
     enum GenderEnum{male,female;}
@@ -33,7 +36,7 @@ public class Main {
     interface Male{
     }
 
-    class Men implements Male{
+    static class Men implements Male{
 
     }
 
@@ -48,11 +51,11 @@ public class Main {
 
     @Gender(gender = GenderEnum.female)
     @Gender2(gender = GenderEnum.female)
-    class Female{
+    static class Female{
 
     }
 
-    class WoMen extends Female{
+    static class WoMen extends Female{
 
     }
 

@@ -46,7 +46,6 @@ public class TSTest {
     @Test
     public void test2(){
         System.err.println(TransactionSynchronizationManager.getCurrentTransactionName());
-        JpaRepository
         test.test(true);
     }
 
