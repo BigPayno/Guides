@@ -1,4 +1,4 @@
-package com.payno.springguide.spring;
+package com.payno.springguide.spring.history;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;

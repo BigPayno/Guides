@@ -20,6 +20,7 @@ import java.sql.Types;
  */
 @Profile("base")
 @Component
+@Transactional
 public class ConnectionLifecycle {
     @Autowired
     JdbcTemplate template;

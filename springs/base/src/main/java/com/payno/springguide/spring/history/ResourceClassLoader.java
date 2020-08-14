@@ -1,4 +1,4 @@
-package com.payno.springguide.spring;
+package com.payno.springguide.spring.history;
 
 import com.google.common.io.ByteStreams;
 import org.springframework.core.OverridingClassLoader;

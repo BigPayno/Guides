@@ -1,4 +1,4 @@
-package com.payno.springguide.spring.enable.bootstrap;
+package com.payno.springguide.spring.history.enable.bootstrap;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

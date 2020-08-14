@@ -1,4 +1,4 @@
-package com.payno.springguide.spring.enable.autoconfig;
+package com.payno.springguide.spring.history.enable.autoconfig;
 
 import org.springframework.context.annotation.Import;
 

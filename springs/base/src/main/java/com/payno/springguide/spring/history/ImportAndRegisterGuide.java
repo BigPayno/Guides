@@ -1,4 +1,4 @@
-package com.payno.springguide.spring;
+package com.payno.springguide.spring.history;
 
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.type.AnnotationMetadata;

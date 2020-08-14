@@ -1,4 +1,4 @@
-package com.payno.springguide.spring.bean;
+package com.payno.springguide.spring.history.bean;
 
 import org.springframework.core.AttributeAccessor;
 

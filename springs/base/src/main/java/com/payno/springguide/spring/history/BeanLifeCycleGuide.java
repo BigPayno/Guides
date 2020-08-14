@@ -1,4 +1,4 @@
-package com.payno.springguide.spring;
+package com.payno.springguide.spring.history;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;

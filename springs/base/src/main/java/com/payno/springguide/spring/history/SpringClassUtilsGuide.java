@@ -1,4 +1,4 @@
-package com.payno.springguide.spring;
+package com.payno.springguide.spring.history;
 
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;

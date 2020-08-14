@@ -1,7 +1,7 @@
-package com.payno.springguide.spring.enable.bootstrap;
+package com.payno.springguide.spring.history.enable.bootstrap;
 
 import com.google.common.collect.ImmutableList;
-import com.payno.springguide.spring.enable.autoconfig.EnableHelloWorld;
+import com.payno.springguide.spring.history.enable.autoconfig.EnableHelloWorld;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;

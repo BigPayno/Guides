@@ -46,7 +46,8 @@ public class ChainedTransaction {
      */
     @Transactional(rollbackFor = RuntimeException.class)
     public void test2(){
-        RedissonTransactionHolder holder=(RedissonTransactionHolder)TransactionSynchronizationManager.getResource(redissonClient);
+        RedissonTransactionHolder holder=(RedissonTransactionHolder)TransactionSynchronizationManager
+                .getResource(redissonClient);
         RSet<String> set=holder.getTransaction().getSet("tran-test");
         set.add("rollbackRedis");
         repo.save(Model.builder().cusName("rollback").build());

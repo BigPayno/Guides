@@ -1,8 +1,6 @@
-package com.payno.springguide.spring.enable.autoconfig;
+package com.payno.springguide.spring.history.enable.autoconfig;
 
-import com.payno.springguide.spring.enable.bootstrap.People;
-import lombok.Data;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import com.payno.springguide.spring.history.enable.bootstrap.People;
 import org.springframework.context.annotation.*;
 
 /**
