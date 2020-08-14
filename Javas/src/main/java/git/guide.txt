@@ -6,16 +6,26 @@
 5.commit to local 提交到本地
 6.push to remote 提交本地git
 
+上传冲突:
+1.reset 重置本地当前分支到无冲突的状态
+2.stash 保存改变的操作
+3.pull 拉取最新代码
+4.unstash 处理冲突
+5.push 提交代码
+
+非版本文件冲突:
 
 
 git checkout 引用操作
 git branch -f 分支创建与移动
-git merge 合并分支到当前分支
+git merge 合并分支到当前分支 no fast forward 合并单条
 git reset,revert 撤销
 git rebase -i 当前分支操作
 git cherry-pick 添加提交到当前引用
 git commit --amend 提交与修改提交
 git push/pull/fetch 远程仓库
 git stash/un stash
+git tag
+git describe
 
 1.本地reset到历史版本，需要恢复正常操作只需要reset本地分支到远程版本
