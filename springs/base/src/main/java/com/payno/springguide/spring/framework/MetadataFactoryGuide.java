@@ -3,7 +3,10 @@ package com.payno.springguide.spring.framework;
 import org.junit.Test;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.AnnotationFilter;
 import org.springframework.core.annotation.MergedAnnotations;
+import org.springframework.core.annotation.MergedAnnotations.SearchStrategy;
+import org.springframework.core.annotation.RepeatableContainers;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.type.AnnotationMetadata;
 import org.springframework.core.type.ClassMetadata;
@@ -126,5 +129,22 @@ public class MetadataFactoryGuide {
                 });
             }
         });
+    }
+
+    @Test
+    public void annotationMetadata(){
+        AnnotationMetadata annotationMetadata = AnnotationMetadata.introspect(Hello.class);
+        Set<MethodMetadata> methodMetadataSet = annotationMetadata.getAnnotatedMethods(PostConstruct.class.getName());
+        methodMetadataSet.forEach(methodMetadata -> {
+            System.out.println(methodMetadata.getMethodName());
+        });
+    }
+
+    @Test
+    public void mergedAnnotation(){
+        MergedAnnotations mergedAnnotations = MergedAnnotations.from(
+                Repo.class, SearchStrategy.DIRECT, RepeatableContainers.standardRepeatables(), AnnotationFilter.NONE);
+        Component component = mergedAnnotations.get(Component.class).synthesize();
+        System.out.println(component.value());
     }
 }
