@@ -26,6 +26,12 @@
         </dependency>
 
         <dependency>
+            <groupId>com.qingqing.marketing</groupId>
+            <artifactId>mtsvc</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>

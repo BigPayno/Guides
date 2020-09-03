@@ -1,8 +1,12 @@
 package com.payno.springguide.spring.framework;
 
+import com.payno.springguide.spring.history.BootEnvironmentGuide.ConditionOn;
 import org.junit.Test;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.Profile;
 import org.springframework.core.annotation.AnnotationFilter;
 import org.springframework.core.annotation.MergedAnnotations;
 import org.springframework.core.annotation.MergedAnnotations.SearchStrategy;
@@ -48,6 +52,7 @@ public class MetadataFactoryGuide {
     }
 
     @Repository("payno")
+    @Profile("tst")
     static class Repo{}
 
     @Test
@@ -70,8 +75,12 @@ public class MetadataFactoryGuide {
         MergedAnnotations mergedAnnotations = annotationMetadata.getAnnotations();
         Component component = mergedAnnotations.get(Component.class).synthesize();
         Repository repository = mergedAnnotations.get(Repository.class).synthesize();
+        Conditional conditional = mergedAnnotations.get(Conditional.class).synthesize();
+        Profile profile = mergedAnnotations.get(Profile.class).synthesize();
         System.out.println(component.value());
         System.out.println(repository.value());
+        Arrays.stream(conditional.value()).forEach(System.out::println);
+        Arrays.stream(profile.value()).forEach(System.out::println);
     }
 
     @Test
