@@ -1,0 +1,9 @@
+message MtSvcDistributionCommodityOrderQueryResponse{
+    optional BaseResponse response = 1;
+    optional int64 order_user_id = 2;//订单家长user id
+    optional string order_user_phone_number =3;//订单家长手机号码
+    optional int64 order_create_time = 4;//订单创建时间
+    optional int64 order_pay_time = 5;//订单支付时间
+    optional DistributionOrderStatus order_status = 6;//订单状态
+    optional int64 commodity_id = 7;//商品id
+}

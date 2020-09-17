@@ -1,0 +1,7 @@
+enum DistributionOrderStatus{
+    unknown_mtsvc_distribution_order_status = -1;
+    mtsvc_distribution_order_init_status = 1; //初始化
+    mtsvc_distribution_order_to_be_paid_status= 2; //待支付
+    mtsvc_distribution_order_paid_status= 3; //已支付
+    mtsvc_distribution_order_cancelled_status= 4; //已取消
+}
