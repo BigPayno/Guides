@@ -6,6 +6,7 @@ import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.beans.propertyeditors.ByteArrayPropertyEditor;
 import org.springframework.beans.propertyeditors.ClassEditor;
+import org.springframework.core.io.ResourceEditor;
 
 import java.beans.PropertyEditorManager;
 import java.util.ArrayList;
@@ -71,5 +72,7 @@ public class BeansContractGuide {
         ClassEditor classEditor = new ClassEditor();
         classEditor.setAsText("java.lang.String");
         System.out.println(classEditor.getValue());
+        ResourceEditor resourceEditor = new ResourceEditor();
+        resourceEditor.setAsText("");
     }
 }
