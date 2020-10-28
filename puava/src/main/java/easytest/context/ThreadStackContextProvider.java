@@ -3,7 +3,6 @@ package easytest.context;
 import com.google.common.base.CaseFormat;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.PeekingIterator;
-import easytest.runnable.EasyTest;
 
 public class ThreadStackContextProvider implements TestContextProvider {
 
@@ -25,7 +24,7 @@ public class ThreadStackContextProvider implements TestContextProvider {
             if(peekingIterator.hasNext()){
                 StackTraceElement next = peekingIterator.peek();
                 if(
-                   cur.getClassName().equals(EasyTest.class.getName())&&
+                   cur.getClassName().equals(Object.class.getName())&&
                    !next.getClassName().equals(cur.getClassName())
                 ){
                     return getMethodTestJava(peekingIterator);

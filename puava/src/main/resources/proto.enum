@@ -1,7 +1,9 @@
-enum DistributionOrderStatus{
-    unknown_mtsvc_distribution_order_status = -1;
-    mtsvc_distribution_order_init_status = 1; //初始化
-    mtsvc_distribution_order_to_be_paid_status= 2; //待支付
-    mtsvc_distribution_order_paid_status= 3; //已支付
-    mtsvc_distribution_order_cancelled_status= 4; //已取消
-}
+enum MixOrderPIPageSortType{
+        unknown_mix_order_page_sort_type = -1;
+        order_create_time_desc_mix_order_page_sort_type = 1;//下单时间倒序
+        order_create_time_asc_mix_order_page_sort_type = 2;//下单时间正序
+        order_pay_time_desc_mix_order_page_sort_type = 3;//支付时间倒序
+        order_pay_time_asc_mix_order_page_sort_type = 4;//支付时间正序
+        order_deal_time_desc_mix_order_page_sort_type = 5;//成单时间倒序
+        order_deal_time_asc_mix_order_page_sort_type = 6;//成单时间正序
+      }
